@@ -36,8 +36,8 @@ const Trends = () => {
               {
                 allBlogs.map((blog,index)=>{
                   return (
-                    <div onClick={()=>handleRedirect(blog?._id)}  key={blog._id+index} className='h-72  sm:h-64 w-full sm:w-52 border rounded-md overflow-hidden'>
-                      <div className=' w-full h-48 sm:h-36'>
+                    <div onClick={()=>handleRedirect(blog?._id)}  key={blog._id+index} className='h-72  sm:h-80 w-full sm:w-72 border rounded-md overflow-hidden'>
+                      <div className=' w-full h-48 sm:h-60'>
                         <img src={blog?.image.url} alt="" className=' h-full w-full' />
                       </div>
                        <div className=' p-2'>
