@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -15,9 +15,13 @@ import Trends from "../pages/Trends";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
-import AddBlogs from "../pages/AddBlogs";
-import EeditBlog from "../pages/EeditBlog";
-import AllBlogs from "../pages/AllBlogs";
+import AddBlogs from "../components/AddBlogs";
+import AllBlogs from "../components/AllBlogs";
+import PrivateRoute from "../privateRoute/PrivateRoute";
+import EditBlog from "../components/EditBlog";
+import BlogDetails from "../components/BlogDetails";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -80,20 +84,24 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
+        path: "/blog-details/:id",
+        element: <BlogDetails />,
+      },
+      {
         path: "/dashboard-admin",
-        element: <Dashboard />,
+        element: (<PrivateRoute> <Dashboard /> </PrivateRoute>),
         children: [
           {
             path: "add-blogs",
             element: <AddBlogs />,
           },
           {
-            path: "edit-blogs/:id",
-            element: <EeditBlog />,
-          },
-          {
             path: "all-blogs",
             element: <AllBlogs />,
+          },
+          {
+            path: "edit-blog/:id",
+            element: <EditBlog />,
           },
         ],
       },

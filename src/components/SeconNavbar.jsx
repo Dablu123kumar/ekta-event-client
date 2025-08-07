@@ -150,6 +150,19 @@ const SecondNavbar = () => {
         >
           Gallery
         </Link>
+        
+        <Link
+          onMouseEnter={handleNavcolor}
+          to='/trends'
+          className={
+            location.pathname === '/trends'
+              ? 'text-pink-500 underline underline-offset-4'
+              : 'hover:text-pink-500 hover:underline underline-offset-4'
+          }
+        >
+          Trends
+        </Link>
+
         <Link
           onMouseEnter={handleNavcolor}
           to='/contact'

@@ -34,6 +34,9 @@ const Signup = () => {
         navigate('/admin-login')
         console.log('sdata',resData)
     }
+    else{
+          toast.error(resData.message)
+        }
     //console.log(formData);
   };
 

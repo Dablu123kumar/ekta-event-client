@@ -1,6 +1,4 @@
-// const backendDomain = import.meta.env.VITE_BACKEND_URL
-const backendDomain = "http://localhost:5003/api/v1"
-//console.log(backendDomain)
+ const backendDomain = import.meta.env.VITE_APP_BACKEND_URL
 const SummaryApi = {
     signUp : {
         url : `${backendDomain}/create-user`,
@@ -15,7 +13,7 @@ const SummaryApi = {
         method : 'post'
     },
     updateBlog : {
-        url : `${backendDomain}/update-blog/:id`,
+        url : `${backendDomain}/update-blog/`,
         method : 'put'
     },
     getBlogAll : {
@@ -23,12 +21,12 @@ const SummaryApi = {
         method : 'get'
     },
     BlogDetails : {
-        url : `${backendDomain}/get-blog-details/:id`,
-        method : 'post'
+        url : `${backendDomain}/get-blog-details/`,
+        method : 'get'
     },
-    blogDetails : {
-        url : `${backendDomain}/delete-blog/:id`,
-        method : 'post'
+    deleteBlog : {
+        url : `${backendDomain}/delete-blog/`,
+        method : 'delete'
     },
 }
 
